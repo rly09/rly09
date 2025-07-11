@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <b>🚀 I'm <span style="color:#64ffda;">Roshan aka Yogi Ji</span> — a Flutter developer and tech explorer building sleek, powerful mobile apps.</b><br>
+  <b>🚀 I'm <span style="color:#64ffda;">Roshan Lal Yogi</span> — a Flutter developer and tech explorer building sleek, powerful mobile apps.</b><br>
   <i>Hackathon-ready. Pixel-perfect UIs. And a sprinkle of Offline AI.</i>
 </p>
 
