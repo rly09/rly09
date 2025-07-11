@@ -5,7 +5,7 @@
 
 <!-- 💬 TYPING INTRO -->
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&center=true&vCenter=true&width=800&lines=Flutter+Dev+%7C+App+Dev;Full-Stack+Mobile+App+Builder;Hackathon+Champion+%F0%9F%8F%86;Offline+AI+%7C+Clean+UIs;Learning+Relentlessly+%F0%9F%9A%80" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&center=true&vCenter=true&width=800&lines=Flutter+Dev+%7C+App+Dev;Full-Stack+Mobile+App+Builder;Offline+AI+%7C+Clean+UIs;Learning+Relentlessly+%F0%9F%9A%80" />
 </p>
 
 <!-- ✨ MINI ABOUT -->
