@@ -40,7 +40,7 @@ class YogiJi {
 ---
 
 ##🛠️ Tech Toolbox
-<p align="center"> <img src="https://skillicons.dev/icons?i=dart,flutter,firebase,supabase,androidstudio,vscode,github,cpp,python,git" /> </p>
+<p align="center"> <img src="https://skillicons.dev/icons?i=dart,flutter,firebase,supabase,androidstudio,vscode,github,cpp,python,git,mysql" /> </p>
 
 ---
 
