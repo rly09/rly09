@@ -45,7 +45,7 @@ class YogiJi {
 ---
 
 ##🚀 Featured Projects
-<table> <tr> <td align="center" width="33%"> <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" width="80"><br><br> <b>PDF Brain</b><br> 🧠 Offline PDF Summarizer using Local AI + Syncfusion </td> <td align="center" width="33%"> <img src="https://cdn-icons-png.flaticon.com/512/8090/8090409.png" width="80"><br><br> <b>AI Career Navigator</b><br> 🧭 Career Quiz + Recommendations with Supabase & OpenAI </td> <td align="center" width="33%"> <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" width="80"><br><br> <b>Notes App</b><br> 📝 Offline Notes with Isar, Light/Dark Mode </td> </tr> </table>
+<table> <tr> <td align="center" width="33%"> <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" width="80"><br><br> <b>PDF Brain</b><br> 🧠 Offline PDF Summarizer using Local AI + Syncfusion </td> <td align="center" width="33%"> <img src="https://cdn-icons-png.flaticon.com/512/8090/8090409.png" width="80"><br><br> <b>AI Career Navigator</b><br> 🧭 Career Quiz + Recommendations with Supabase & Local AI </td> <td align="center" width="33%"> <img src="https://cdn-icons-png.flaticon.com/512/13072/13072670.png" width="80"><br><br> <b>Tic Tac Toe</b><br> 📝 Offline Tic Tac Toe game</td> </tr> </table>
 
 ---
 
