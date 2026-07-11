@@ -370,9 +370,9 @@ def gather_stats():
     return stats
 
 # ==============================================================================
-# SVG COMPILATION TEMPLATE
+# SVG COMPILATION TEMPLATE (Width 830px to add column gap)
 # ==============================================================================
-SVG_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 360" width="810" height="360">
+SVG_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 360" width="830" height="360">
   <defs>
     <style type="text/css">
       @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&amp;display=swap');
@@ -397,7 +397,7 @@ SVG_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 360" 
   </defs>
 
   <!-- Background Fill -->
-  <rect x="0" y="0" width="810" height="360" fill="{bg_sub_frame}" rx="8" />
+  <rect x="0" y="0" width="830" height="360" fill="{bg_sub_frame}" rx="8" />
 
   <!-- LEFT COLUMN: Grayscale ASCII Portrait (x=20 to x=285) -->
   <g>
@@ -407,37 +407,37 @@ SVG_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 360" 
     </text>
   </g>
 
-  <!-- RIGHT COLUMN: Terminal Stats Panel (x=310 to x=790) -->
+  <!-- RIGHT COLUMN: Terminal Stats Panel (x=330 to x=810) -->
   <g>
     <!-- Header Prompt -->
-    <text x="310" y="30" font-size="12" fill="{accent_color}" font-weight="bold" class="monospace">
+    <text x="330" y="30" font-size="12" fill="{accent_color}" font-weight="bold" class="monospace">
       roshan@roshan_os ~ [git:main] <tspan fill="{text_subtle}">────────────────────────</tspan>
     </text>
     
     <!-- Tech Stack & Git Stats Section -->
-    <text x="310" y="60" font-size="11" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 16px;">
-      <tspan x="310" dy="0" fill="{accent_color}" font-weight="bold">TECH_STACK ─────────────────────────────────────────────</tspan>
+    <text x="330" y="60" font-size="11" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 16px;">
+      <tspan x="330" dy="0" fill="{accent_color}" font-weight="bold">TECH_STACK ─────────────────────────────────────────────</tspan>
       
-      <tspan x="310" dy="20" fill="{accent_color}">Mobile     ::</tspan> <tspan fill="{text_main}">Flutter, Dart, Android, Firebase, Supabase</tspan>
-      <tspan x="310" dy="16" fill="{accent_color}">Frontend   ::</tspan> <tspan fill="{text_main}">HTML5, CSS3, JavaScript, TypeScript, React</tspan>
-      <tspan x="310" dy="16" fill="{accent_color}">Backend    ::</tspan> <tspan fill="{text_main}">Node.js, Express, REST API</tspan>
-      <tspan x="310" dy="16" fill="{accent_color}">AI &amp; ML    ::</tspan> <tspan fill="{text_main}">OpenAI, Gemini, Python, RAG, Prompt Eng.</tspan>
-      <tspan x="310" dy="16" fill="{accent_color}">Databases  ::</tspan> <tspan fill="{text_main}">MySQL, PostgreSQL, MongoDB, Firestore</tspan>
-      <tspan x="310" dy="16" fill="{accent_color}">Tools      ::</tspan> <tspan fill="{text_main}">Git, GitHub, Docker, Linux, Postman, Figma, VSCode</tspan>
+      <tspan x="330" dy="20" fill="{accent_color}">Mobile     ::</tspan> <tspan fill="{text_main}">Flutter, Dart, Android, Firebase, Supabase</tspan>
+      <tspan x="330" dy="16" fill="{accent_color}">Frontend   ::</tspan> <tspan fill="{text_main}">HTML5, CSS3, JavaScript, TypeScript, React</tspan>
+      <tspan x="330" dy="16" fill="{accent_color}">Backend    ::</tspan> <tspan fill="{text_main}">Node.js, Express, REST API</tspan>
+      <tspan x="330" dy="16" fill="{accent_color}">AI &amp; ML    ::</tspan> <tspan fill="{text_main}">OpenAI, Gemini, Python, RAG, Prompt Eng.</tspan>
+      <tspan x="330" dy="16" fill="{accent_color}">Databases  ::</tspan> <tspan fill="{text_main}">MySQL, PostgreSQL, MongoDB, Firestore</tspan>
+      <tspan x="330" dy="16" fill="{accent_color}">Tools      ::</tspan> <tspan fill="{text_main}">Git, GitHub, Docker, Linux, Postman, Figma, VSCode</tspan>
       
       <!-- Contact Info Section -->
-      <tspan x="310" dy="30" fill="{accent_color}" font-weight="bold">CONTACT_INFO ───────────────────────────────────────────</tspan>
+      <tspan x="330" dy="30" fill="{accent_color}" font-weight="bold">CONTACT_INFO ───────────────────────────────────────────</tspan>
       
-      <tspan x="310" dy="20" fill="{accent_color}">Email      ::</tspan> <tspan fill="{text_main}">yogiroshan2005@gmail.com</tspan>
-      <tspan x="310" dy="16" fill="{accent_color}">LinkedIn   ::</tspan> <tspan fill="{text_main}">roshanlalyogi</tspan>
-      <tspan x="310" dy="16" fill="{accent_color}">GitHub     ::</tspan> <tspan fill="{text_main}">github.com/rly09</tspan>
+      <tspan x="330" dy="20" fill="{accent_color}">Email      ::</tspan> <tspan fill="{text_main}">yogiroshan2005@gmail.com</tspan>
+      <tspan x="330" dy="16" fill="{accent_color}">LinkedIn   ::</tspan> <tspan fill="{text_main}">roshanlalyogi</tspan>
+      <tspan x="330" dy="16" fill="{accent_color}">GitHub     ::</tspan> <tspan fill="{text_main}">github.com/rly09</tspan>
       
       <!-- Git Stats Section -->
-      <tspan x="310" dy="30" fill="{accent_color}" font-weight="bold">GIT_STATS ──────────────────────────────────────────────</tspan>
+      <tspan x="330" dy="30" fill="{accent_color}" font-weight="bold">GIT_STATS ──────────────────────────────────────────────</tspan>
       
-      <tspan x="310" dy="20" fill="{text_subtle}">Repos      ::</tspan> <tspan fill="{text_main}" font-weight="bold">{repos}</tspan> <tspan fill="{text_subtle}">  |  Stars    ::</tspan> <tspan fill="{text_main}" font-weight="bold">{stars}</tspan>
-      <tspan x="310" dy="16" fill="{text_subtle}">Commits    ::</tspan> <tspan fill="{text_main}" font-weight="bold">{commits}</tspan> <tspan fill="{text_subtle}">  |  Followers::</tspan> <tspan fill="{text_main}" font-weight="bold">{followers}</tspan>
-      <tspan x="310" dy="16" fill="{text_subtle}">Contribs   ::</tspan> <tspan fill="{text_main}" font-weight="bold">{contributions}</tspan> <tspan fill="{text_subtle}">  |  Code     ::</tspan> <tspan fill="{text_main}" font-weight="bold">{loc} LOC</tspan><tspan class="cursor" fill="{accent_color}">_</tspan>
+      <tspan x="330" dy="20" fill="{text_subtle}">Repos      ::</tspan> <tspan fill="{text_main}" font-weight="bold">{repos}</tspan> <tspan fill="{text_subtle}">  |  Stars    ::</tspan> <tspan fill="{text_main}" font-weight="bold">{stars}</tspan>
+      <tspan x="330" dy="16" fill="{text_subtle}">Commits    ::</tspan> <tspan fill="{text_main}" font-weight="bold">{commits}</tspan> <tspan fill="{text_subtle}">  |  Followers::</tspan> <tspan fill="{text_main}" font-weight="bold">{followers}</tspan>
+      <tspan x="330" dy="16" fill="{text_subtle}">Contribs   ::</tspan> <tspan fill="{text_main}" font-weight="bold">{contributions}</tspan> <tspan fill="{text_subtle}">  |  Code     ::</tspan> <tspan fill="{text_main}" font-weight="bold">{loc} LOC</tspan><tspan class="cursor" fill="{accent_color}">_</tspan>
     </text>
   </g>
 </svg>
@@ -447,7 +447,7 @@ SVG_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 360" 
 # MAIN COMPILER
 # ==============================================================================
 def main():
-    print("Starting ROSHAN.OS SVG Redesign Pipeline (Holographic Theme - Aligned)...")
+    print("Starting ROSHAN.OS SVG Redesign Pipeline (Holographic Theme - Spacious Aligned)...")
     
     # 1. Resolve profile avatar
     avatar_exists = download_avatar(USERNAME, AVATAR_PATH)
