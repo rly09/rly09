@@ -79,7 +79,7 @@
     <text x="395" y="48" font-size="11.0" fill="#24292f" xml:space="preserve" class="monospace" style="line-height: 20px;">
       <tspan x="395" dy="0" fill="#57606a">mobile:</tspan>   <tspan fill="#24292f">[Flutter, Dart, Android]</tspan>
       <tspan x="395" dy="20" fill="#57606a">frontend:</tspan> <tspan fill="#24292f">[React, HTML5, CSS3, JavaScript, TypeScript]</tspan>
-      <tspan x="395" dy="20" fill="#57606a">backend:</tspan>  <tspan fill="#24292f">[Node.js, Express, REST_API]</tspan>
+      <tspan x="395" dy="20" fill="#57606a">backend:</tspan>  <tspan fill="#24292f">[Node.js, Express, FastAPI]</tspan>
       <tspan x="395" dy="20" fill="#57606a">ai_ml:</tspan>    <tspan fill="#24292f">[OpenAI, Gemini, Python, RAG, Prompt_Eng.]</tspan>
       <tspan x="395" dy="20" fill="#57606a">databases:</tspan><tspan fill="#24292f">[MySQL, PostgreSQL, MongoDB, Firestore]</tspan>
       <tspan x="395" dy="20" fill="#57606a">tools:</tspan>    <tspan fill="#24292f">[Git, GitHub, Docker, Linux, Postman, Figma, VSCode]</tspan>

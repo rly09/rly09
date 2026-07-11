@@ -465,7 +465,7 @@ SVG_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 430" 
     <text x="395" y="48" font-size="11.0" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 20px;">
       <tspan x="395" dy="0" fill="{text_subtle}">mobile:</tspan>   <tspan fill="{text_main}">[Flutter, Dart, Android]</tspan>
       <tspan x="395" dy="20" fill="{text_subtle}">frontend:</tspan> <tspan fill="{text_main}">[React, HTML5, CSS3, JavaScript, TypeScript]</tspan>
-      <tspan x="395" dy="20" fill="{text_subtle}">backend:</tspan>  <tspan fill="{text_main}">[Node.js, Express, REST_API]</tspan>
+      <tspan x="395" dy="20" fill="{text_subtle}">backend:</tspan>  <tspan fill="{text_main}">[Node.js, Express, FastAPI]</tspan>
       <tspan x="395" dy="20" fill="{text_subtle}">ai_ml:</tspan>    <tspan fill="{text_main}">[OpenAI, Gemini, Python, RAG, Prompt_Eng.]</tspan>
       <tspan x="395" dy="20" fill="{text_subtle}">databases:</tspan><tspan fill="{text_main}">[MySQL, PostgreSQL, MongoDB, Firestore]</tspan>
       <tspan x="395" dy="20" fill="{text_subtle}">tools:</tspan>    <tspan fill="{text_main}">[Git, GitHub, Docker, Linux, Postman, Figma, VSCode]</tspan>
