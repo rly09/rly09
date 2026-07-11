@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="960" height="460">
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&amp;display=swap');
+      
+      .monospace {
+        font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', Courier, monospace;
+      }
+      
+      /* Animation Keyframes */
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      .cursor {
+        animation: blink 1s step-end infinite;
+      }
+      
+      .glow-accent {
+        filter: drop-shadow(0 0 3px rgba(57, 255, 20, 0.4));
+      }
+    </style>
+  </defs>
+
+  <!-- Background Fill -->
+  <rect x="0" y="0" width="960" height="460" fill="#080b10" rx="8" />
+
+  <!-- LEFT COLUMN: Grayscale ASCII Portrait (x=40 to x=400) -->
+  <g>
+    <!-- ASCII Art container (increased font size for larger look, aligned with prompt) -->
+    <text x="40" y="45" font-size="8.8" fill="#e6edf3" xml:space="preserve" class="monospace" style="line-height: 11.5px; letter-spacing: 0.5px;" opacity="0.9">
+<tspan x="40" dy="0">------::--=++::......::-:::.....--...:::::::......</tspan>
+<tspan x="40" dy="11.5">:::--::---=+=:-:..:..:....::.:::.:...:..:-:::..:::</tspan>
+<tspan x="40" dy="11.5">:::--------==-:...          ....:-:....:::-::..:::</tspan>
+<tspan x="40" dy="11.5">:------:---=-:.                 .:-.. ::--:::..:::</tspan>
+<tspan x="40" dy="11.5">-----::--:--.                     .:..==---::...:.</tspan>
+<tspan x="40" dy="11.5">:-----:--:-.                :.     ..:----::-..:..</tspan>
+<tspan x="40" dy="11.5">:--:-:-----:   :.:=-+=+--=*+#++=   ..:---:---:.::.</tspan>
+<tspan x="40" dy="11.5">---------::-. :+*###########**#%=  :.:--:--::.....</tspan>
+<tspan x="40" dy="11.5">-:-----:-:-=: -+:---=*#*#*---:-** .:.::.:::::.....</tspan>
+<tspan x="40" dy="11.5">-----:-:::--- -==+==++*##**++++**.=-..:-:::::....:</tspan>
+<tspan x="40" dy="11.5">-----:---:-=+=-++#..#**####- *##*+*+:.----:::...:-</tspan>
+<tspan x="40" dy="11.5">:--------:--+==+*#*+##**###*+###*=++.:---::::..:-:</tspan>
+<tspan x="40" dy="11.5">:-----:-----=+=+*###*#***#######***-.:-:-:--:..:::</tspan>
+<tspan x="40" dy="11.5">----::::----:-==*#**##***###**#*+=::::::-::::..::.</tspan>
+<tspan x="40" dy="11.5">-:-:::::::--::::+*#++*####*++##+.:::..::::..::..::</tspan>
+<tspan x="40" dy="11.5">--::::::::--:::::=*#***++***##=..:::...::-:.:..::-</tspan>
+<tspan x="40" dy="11.5">:::-::::::-:--::.:=+*#***##*++-::::..:::--:.:....:</tspan>
+<tspan x="40" dy="11.5">::::::::::--::::::+==+****+++#-:::...:::::::....::</tspan>
+<tspan x="40" dy="11.5">:::::::::::::.:.:-+++++++++*##*=-:::::-::::.:.::..</tspan>
+<tspan x="40" dy="11.5">:::::::::::::.:.=+++++++**######------::::::::::..</tspan>
+<tspan x="40" dy="11.5">::::..:.:.:.:.:.:=+++**######*+------------::.....</tspan>
+<tspan x="40" dy="11.5">-::.::::::::::::::-=+*****++=-----------------:.::</tspan>
+<tspan x="40" dy="11.5">::.:.:::::-----:-------------------------------:.:</tspan>
+<tspan x="40" dy="11.5">:.:.::------------------------------------------:.</tspan>
+<tspan x="40" dy="11.5">.::.::----------------------------------::-:----:.</tspan>
+<tspan x="40" dy="11.5">::::.:::--------------------------------::-:-----:</tspan>
+<tspan x="40" dy="11.5">.::.:.::--------------------------------:::------:</tspan>
+    </text>
+  </g>
+
+  <!-- RIGHT COLUMN: Terminal Stats Panel (x=440 to x=920) -->
+  <g>
+    <!-- Header Prompt -->
+    <text x="440" y="45" font-size="12" fill="#39ff14" font-weight="bold" class="monospace">
+      roshan@roshan_os ~ [git:main] <tspan fill="#8b949e">─────────────────────────</tspan>
+    </text>
+    
+    <!-- Tech Stack & Git Stats Section -->
+    <text x="440" y="75" font-size="11" fill="#e6edf3" xml:space="preserve" class="monospace" style="line-height: 16px;">
+      <tspan x="440" dy="0" fill="#39ff14" font-weight="bold">TECH_STACK ─────────────────────────────────────────────</tspan>
+      
+      <tspan x="440" dy="20" fill="#39ff14">Mobile     ::</tspan> <tspan fill="#e6edf3">Flutter, Dart, Android, Firebase, Supabase</tspan>
+      <tspan x="440" dy="16" fill="#39ff14">Frontend   ::</tspan> <tspan fill="#e6edf3">HTML5, CSS3, JavaScript, TypeScript, React</tspan>
+      <tspan x="440" dy="16" fill="#39ff14">Backend    ::</tspan> <tspan fill="#e6edf3">Node.js, Express, REST API</tspan>
+      <tspan x="440" dy="16" fill="#39ff14">AI &amp; ML    ::</tspan> <tspan fill="#e6edf3">OpenAI, Gemini, Python, RAG, Prompt Eng.</tspan>
+      <tspan x="440" dy="16" fill="#39ff14">Databases  ::</tspan> <tspan fill="#e6edf3">MySQL, PostgreSQL, MongoDB, Firestore</tspan>
+      <tspan x="440" dy="16" fill="#39ff14">Tools      ::</tspan> <tspan fill="#e6edf3">Git, GitHub, Docker, Linux, Postman, Figma, VSCode</tspan>
+      
+      <!-- Contact Info Section -->
+      <tspan x="440" dy="30" fill="#39ff14" font-weight="bold">CONTACT_INFO ───────────────────────────────────────────</tspan>
+      
+      <tspan x="440" dy="20" fill="#39ff14">Email      ::</tspan> <tspan fill="#e6edf3">yogiroshan2005@gmail.com</tspan>
+      <tspan x="440" dy="16" fill="#39ff14">LinkedIn   ::</tspan> <tspan fill="#e6edf3">roshanlalyogi</tspan>
+      <tspan x="440" dy="16" fill="#39ff14">GitHub     ::</tspan> <tspan fill="#e6edf3">github.com/rly09</tspan>
+      
+      <!-- Git Stats Section -->
+      <tspan x="440" dy="30" fill="#39ff14" font-weight="bold">GIT_STATS ──────────────────────────────────────────────</tspan>
+      
+      <tspan x="440" dy="20" fill="#8b949e">Repos      ::</tspan> <tspan fill="#e6edf3" font-weight="bold">67</tspan> <tspan fill="#8b949e">  |  Stars    ::</tspan> <tspan fill="#e6edf3" font-weight="bold">0</tspan>
+      <tspan x="440" dy="16" fill="#8b949e">Commits    ::</tspan> <tspan fill="#e6edf3" font-weight="bold">3944</tspan> <tspan fill="#8b949e">  |  Followers::</tspan> <tspan fill="#e6edf3" font-weight="bold">7</tspan>
+      <tspan x="440" dy="16" fill="#8b949e">Contribs   ::</tspan> <tspan fill="#e6edf3" font-weight="bold">2465</tspan> <tspan fill="#8b949e">  |  Code     ::</tspan> <tspan fill="#e6edf3" font-weight="bold">27,186,060 LOC</tspan><tspan class="cursor" fill="#39ff14">_</tspan>
+    </text>
+  </g>
+</svg>
