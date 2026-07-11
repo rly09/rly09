@@ -28,12 +28,12 @@ LIGHT_RAMP = ['@', '%', '#', '*', '+', '=', '-', ':', '.', ' ']
 
 # Theme Palettes
 THEME_DARK = {
-    "bg_sub_frame": "#080b10",      # Very dark slate/black
-    "border_separator": "#21262d",  # Inner separation lines
+    "bg_sub_frame": "#0f141c",      # Dark slate/charcoal (not completely black)
+    "border_separator": "#1d2433",  # Inner separation lines
     "text_main": "#e6edf3",         # Main text (bright)
     "text_subtle": "#8b949e",       # Subtle text (grey)
-    "accent_color": "#39ff14",      # Matrix neon green
-    "accent_color_glow": "rgba(57, 255, 20, 0.4)",
+    "accent_color": "#62ef8a",      # Light mint green
+    "accent_color_glow": "rgba(98, 239, 138, 0.4)",
     "ascii_color": "#e6edf3",       # High contrast grey-white ASCII
 }
 
