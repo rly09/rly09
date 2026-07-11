@@ -86,8 +86,28 @@ def download_avatar(username, target_path):
 # ==============================================================================
 # ASCII ART GENERATION
 # ==============================================================================
+def remove_background(img, tolerance=25):
+    """Removes the background from a PIL image using floodfill from the corners."""
+    from PIL import ImageDraw
+    img = img.convert("RGBA")
+    w, h = img.size
+    
+    # Sample four corners as background seeds
+    corners = [(0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1)]
+    
+    for xy in corners:
+        # Get the color at this corner; if not already transparent, floodfill it
+        color = img.getpixel(xy)
+        if color[3] != 0:
+            try:
+                ImageDraw.floodfill(img, xy, (0, 0, 0, 0), thresh=tolerance)
+            except Exception as e:
+                print(f"Floodfill error at corner {xy}: {e}")
+                
+    return img
+
 def generate_ascii_grid(image_path, width=ASCII_WIDTH, height=ASCII_HEIGHT, aspect_ratio=ASCII_ASPECT_RATIO):
-    """Converts profile image into a 2D grid of grayscale values (0-255)."""
+    """Converts profile image into a 2D grid of grayscale values, removing the background."""
     if not os.path.exists(image_path):
         print(f"Cannot generate ASCII: image not found at {image_path}")
         return []
@@ -95,38 +115,52 @@ def generate_ascii_grid(image_path, width=ASCII_WIDTH, height=ASCII_HEIGHT, aspe
     try:
         img = Image.open(image_path)
         
-        # Enhance contrast and sharpness for accurate facial details
-        from PIL import ImageEnhance
-        img = ImageEnhance.Contrast(img).enhance(1.4)
-        img = ImageEnhance.Sharpness(img).enhance(1.3)
+        # 1. Crop 8% off boundaries to focus on the person and ensure corners are background
+        w, h = img.size
+        crop_w = int(w * 0.08)
+        crop_h = int(h * 0.08)
+        img = img.crop((crop_w, crop_h, w - crop_w, h - crop_h))
         
-        img = img.convert('L')  # Convert to grayscale
+        # 2. Remove background using floodfill
+        img = remove_background(img, tolerance=25)
         
-        # Calculate size preserving ratio
+        # 3. Calculate size preserving ratio
         orig_w, orig_h = img.size
-        # Monospace characters are taller than they are wide, adjust target height
         calc_h = int((orig_h / orig_w) * width * aspect_ratio)
         calc_h = min(calc_h, height)
         
         img = img.resize((width, calc_h), Image.Resampling.LANCZOS)
         
-        # Pull pixels
+        # 4. Enhance contrast and sharpness of the person (RGB channels only)
+        from PIL import ImageEnhance
+        r, g, b, a = img.split()
+        rgb_img = Image.merge("RGB", (r, g, b))
+        rgb_img = ImageEnhance.Contrast(rgb_img).enhance(1.4)
+        rgb_img = ImageEnhance.Sharpness(rgb_img).enhance(1.3)
+        img = Image.merge("RGBA", (rgb_img.split()[0], rgb_img.split()[1], rgb_img.split()[2], a))
+        
+        # 5. Pull pixels
         pixels = img.load()
         grid = []
         for y in range(calc_h):
             row = []
             for x in range(width):
-                row.append(pixels[x, y])
+                r, g, b, alpha = pixels[x, y]
+                if alpha < 50:
+                    row.append(-1)  # Marker for background
+                else:
+                    gray = int(0.299 * r + 0.587 * g + 0.114 * b)
+                    row.append(gray)
             grid.append(row)
             
-        print(f"ASCII grid generated. Size: {width}x{calc_h}")
+        print(f"ASCII grid generated (background removed). Size: {width}x{calc_h}")
         return grid
     except Exception as e:
         print(f"Error processing image for ASCII: {e}")
         return []
 
 def format_ascii_tspans(grid, ramp, start_x=20):
-    """Formats 2D grayscale grid into SVG tspan tags."""
+    """Formats 2D grayscale grid into SVG tspan tags, rendering background as spaces."""
     if not grid:
         return '<tspan x="20" dy="0">[ Portrait unavailable ]</tspan>'
         
@@ -134,9 +168,11 @@ def format_ascii_tspans(grid, ramp, start_x=20):
     for i, row in enumerate(grid):
         chars = []
         for pixel in row:
-            # Map pixel (0-255) to character ramp index
-            idx = int((pixel / 256.0) * len(ramp))
-            chars.append(ramp[idx])
+            if pixel == -1:
+                chars.append(' ')  # Background pixel mapped to empty space
+            else:
+                idx = int((pixel / 256.0) * len(ramp))
+                chars.append(ramp[idx])
         line_text = "".join(chars)
         escaped_line = escape_xml(line_text)
         
