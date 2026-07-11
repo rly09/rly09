@@ -1,0 +1,5 @@
+# Ignore assets folder
+assets/
+
+# Ignore python cache
+__pycache__/

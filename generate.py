@@ -18,8 +18,8 @@ LIGHT_SVG_PATH = "light_mode.svg"
 CACHE_EXPIRY_HOURS = 12
 
 # Grid settings for Left Column ASCII art
-ASCII_WIDTH = 48
-ASCII_HEIGHT = 32
+ASCII_WIDTH = 52
+ASCII_HEIGHT = 30
 ASCII_ASPECT_RATIO = 0.55  # height-to-width ratio of monospace character
 
 # Grayscale character ramps
@@ -115,10 +115,10 @@ def generate_ascii_grid(image_path, width=ASCII_WIDTH, height=ASCII_HEIGHT, aspe
     try:
         img = Image.open(image_path)
         
-        # 1. Crop 8% off boundaries to focus on the person and ensure corners are background
+        # 1. Crop 0% off boundaries since profile-bg.png is already pre-cropped and clean
         w, h = img.size
-        crop_w = int(w * 0.08)
-        crop_h = int(h * 0.08)
+        crop_w = int(w * 0.0)
+        crop_h = int(h * 0.0)
         img = img.crop((crop_w, crop_h, w - crop_w, h - crop_h))
         
         # 2. Remove background using floodfill
@@ -159,10 +159,10 @@ def generate_ascii_grid(image_path, width=ASCII_WIDTH, height=ASCII_HEIGHT, aspe
         print(f"Error processing image for ASCII: {e}")
         return []
 
-def format_ascii_tspans(grid, ramp, start_x=20):
+def format_ascii_tspans(grid, ramp, start_x=15, dy_val="15.0"):
     """Formats 2D grayscale grid into SVG tspan tags, rendering background as spaces."""
     if not grid:
-        return '<tspan x="20" dy="0">[ Portrait unavailable ]</tspan>'
+        return '<tspan x="30" dy="0">[ Portrait unavailable ]</tspan>'
         
     tspans = []
     for i, row in enumerate(grid):
@@ -177,7 +177,7 @@ def format_ascii_tspans(grid, ramp, start_x=20):
         escaped_line = escape_xml(line_text)
         
         # Apply line height using dy
-        dy = "12.8" if i > 0 else "0"
+        dy = dy_val if i > 0 else "0"
         tspans.append(f'<tspan x="{start_x}" dy="{dy}">{escaped_line}</tspan>')
         
     return "\n".join(tspans)
@@ -448,8 +448,8 @@ SVG_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 430" 
 
   <!-- LEFT COLUMN: Grayscale ASCII Portrait -->
   <g>
-    <!-- ASCII Art container (starting at x=20, y=30) -->
-    <text x="20" y="30" font-size="10.5" fill="{ascii_color}" xml:space="preserve" class="monospace" style="line-height: 12.8px; letter-spacing: 0.5px;" opacity="0.9">
+    <!-- ASCII Art container (starting at x=15, y=22) -->
+    <text x="15" y="22" font-size="10.5" fill="{ascii_color}" xml:space="preserve" class="monospace" style="line-height: 15.0px; letter-spacing: 0.5px;" opacity="0.9">
 {ascii_art_tspans}
     </text>
   </g>
@@ -457,42 +457,42 @@ SVG_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 430" 
   <!-- RIGHT COLUMN: Interactive Terminal Panel -->
   <g>
     <!-- Zsh Prompt 1: Tech Stack cat command -->
-    <text x="350" y="35" font-size="13.5" fill="{accent_color}" font-weight="bold" class="monospace">
+    <text x="395" y="25" font-size="13.0" fill="{accent_color}" font-weight="bold" class="monospace">
       roshan@roshan_os ~ % <tspan fill="{text_main}">cat skills.yaml</tspan>
     </text>
     
     <!-- Tech Stack Output -->
-    <text x="350" y="58" font-size="12.0" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 18px;">
-      <tspan x="350" dy="0" fill="{text_subtle}">mobile:</tspan>   <tspan fill="{text_main}">[Flutter, Dart, Android]</tspan>
-      <tspan x="350" dy="18" fill="{text_subtle}">frontend:</tspan> <tspan fill="{text_main}">[React, HTML5, CSS3, JavaScript, TypeScript]</tspan>
-      <tspan x="350" dy="18" fill="{text_subtle}">backend:</tspan>  <tspan fill="{text_main}">[Node.js, Express, REST_API]</tspan>
-      <tspan x="350" dy="18" fill="{text_subtle}">ai_ml:</tspan>    <tspan fill="{text_main}">[OpenAI, Gemini, Python, RAG, Prompt_Eng.]</tspan>
-      <tspan x="350" dy="18" fill="{text_subtle}">databases:</tspan><tspan fill="{text_main}">[MySQL, PostgreSQL, MongoDB, Firestore]</tspan>
-      <tspan x="350" dy="18" fill="{text_subtle}">tools:</tspan>    <tspan fill="{text_main}">[Git, GitHub, Docker, Linux, Postman, Figma, VSCode]</tspan>
+    <text x="395" y="48" font-size="11.0" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 20px;">
+      <tspan x="395" dy="0" fill="{text_subtle}">mobile:</tspan>   <tspan fill="{text_main}">[Flutter, Dart, Android]</tspan>
+      <tspan x="395" dy="20" fill="{text_subtle}">frontend:</tspan> <tspan fill="{text_main}">[React, HTML5, CSS3, JavaScript, TypeScript]</tspan>
+      <tspan x="395" dy="20" fill="{text_subtle}">backend:</tspan>  <tspan fill="{text_main}">[Node.js, Express, REST_API]</tspan>
+      <tspan x="395" dy="20" fill="{text_subtle}">ai_ml:</tspan>    <tspan fill="{text_main}">[OpenAI, Gemini, Python, RAG, Prompt_Eng.]</tspan>
+      <tspan x="395" dy="20" fill="{text_subtle}">databases:</tspan><tspan fill="{text_main}">[MySQL, PostgreSQL, MongoDB, Firestore]</tspan>
+      <tspan x="395" dy="20" fill="{text_subtle}">tools:</tspan>    <tspan fill="{text_main}">[Git, GitHub, Docker, Linux, Postman, Figma, VSCode]</tspan>
     </text>
 
     <!-- Zsh Prompt 2: Contact curl command -->
-    <text x="350" y="195" font-size="13.5" fill="{accent_color}" font-weight="bold" class="monospace">
+    <text x="395" y="205" font-size="13.0" fill="{accent_color}" font-weight="bold" class="monospace">
       roshan@roshan_os ~ % <tspan fill="{text_main}">curl -s roshan.os/contact</tspan>
     </text>
     
     <!-- Contact Info Output -->
-    <text x="350" y="218" font-size="12.0" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 18px;">
-      <tspan x="350" dy="0" fill="{text_subtle}">email</tspan>    <tspan fill="{accent_color}">-&gt;</tspan> <tspan fill="{text_main}">yogiroshan2005@gmail.com</tspan>
-      <tspan x="350" dy="18" fill="{text_subtle}">linkedin</tspan> <tspan fill="{accent_color}">-&gt;</tspan> <tspan fill="{text_main}">roshanlalyogi</tspan>
-      <tspan x="350" dy="18" fill="{text_subtle}">github</tspan>   <tspan fill="{accent_color}">-&gt;</tspan> <tspan fill="{text_main}">github.com/rly09</tspan>
+    <text x="395" y="228" font-size="11.0" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 20px;">
+      <tspan x="395" dy="0" fill="{text_subtle}">email</tspan>    <tspan fill="{accent_color}">-&gt;</tspan> <tspan fill="{text_main}">yogiroshan2005@gmail.com</tspan>
+      <tspan x="395" dy="20" fill="{text_subtle}">linkedin</tspan> <tspan fill="{accent_color}">-&gt;</tspan> <tspan fill="{text_main}">roshanlalyogi</tspan>
+      <tspan x="395" dy="20" fill="{text_subtle}">github</tspan>   <tspan fill="{accent_color}">-&gt;</tspan> <tspan fill="{text_main}">github.com/rly09</tspan>
     </text>
 
     <!-- Zsh Prompt 3: git stats status command -->
-    <text x="350" y="300" font-size="13.5" fill="{accent_color}" font-weight="bold" class="monospace">
+    <text x="395" y="325" font-size="13.0" fill="{accent_color}" font-weight="bold" class="monospace">
       roshan@roshan_os ~ % <tspan fill="{text_main}">git status --stats</tspan>
     </text>
     
     <!-- Git Stats Output -->
-    <text x="350" y="323" font-size="12.0" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 18px;">
-      <tspan x="350" dy="0" fill="{text_subtle}">repos:</tspan> <tspan fill="{text_main}" font-weight="bold">{repos}</tspan> <tspan fill="{text_subtle}"> | stars:</tspan> <tspan fill="{text_main}" font-weight="bold">{stars}</tspan> <tspan fill="{text_subtle}"> | followers:</tspan> <tspan fill="{text_main}" font-weight="bold">{followers}</tspan>
-      <tspan x="350" dy="18" fill="{text_subtle}">commits:</tspan> <tspan fill="{text_main}" font-weight="bold">{commits}</tspan> <tspan fill="{text_subtle}"> | contributions:</tspan> <tspan fill="{text_main}" font-weight="bold">{contributions}</tspan>
-      <tspan x="350" dy="18" fill="{text_subtle}">lines_of_code:</tspan> <tspan fill="{text_main}" font-weight="bold">{loc} LOC</tspan><tspan class="cursor" fill="{accent_color}">_</tspan>
+    <text x="395" y="348" font-size="11.0" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 20px;">
+      <tspan x="395" dy="0" fill="{text_subtle}">repos:</tspan> <tspan fill="{text_main}" font-weight="bold">{repos}</tspan> <tspan fill="{text_subtle}"> | stars:</tspan> <tspan fill="{text_main}" font-weight="bold">{stars}</tspan> <tspan fill="{text_subtle}"> | followers:</tspan> <tspan fill="{text_main}" font-weight="bold">{followers}</tspan>
+      <tspan x="395" dy="20" fill="{text_subtle}">commits:</tspan> <tspan fill="{text_main}" font-weight="bold">{commits}</tspan> <tspan fill="{text_subtle}"> | contributions:</tspan> <tspan fill="{text_main}" font-weight="bold">{contributions}</tspan>
+      <tspan x="395" dy="20" fill="{text_subtle}">lines_of_code:</tspan> <tspan fill="{text_main}" font-weight="bold">{loc} LOC</tspan><tspan class="cursor" fill="{accent_color}">_</tspan>
     </text>
   </g>
 </svg>

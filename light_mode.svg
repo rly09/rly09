@@ -35,76 +35,78 @@
 
   <!-- LEFT COLUMN: Grayscale ASCII Portrait -->
   <g>
-    <!-- ASCII Art container (starting at x=20, y=30) -->
-    <text x="20" y="30" font-size="10.5" fill="#24292f" xml:space="preserve" class="monospace" style="line-height: 12.8px; letter-spacing: 0.5px;" opacity="0.9">
-<tspan x="20" dy="0">********++**#%@@@@@@@@@@@@@@@@%%#**#%%@####***# </tspan>
-<tspan x="20" dy="12.8">***##***++*%@@@@@@@@@@@@@@@@@@@@@#*#%%@%##*##*# </tspan>
-<tspan x="20" dy="12.8">*###****+#%@@@@@@@@@@@@@@@@@@@@@@@@##%%++***##* </tspan>
-<tspan x="20" dy="12.8">**#***#*#@@@@@@@@@@@@@@@@@@@@@@@@@@%#@#+***###* </tspan>
-<tspan x="20" dy="12.8">*####**+%@@@@@@@%@@#@#@@%*#+:%#@@@@@%%#********#</tspan>
-<tspan x="20" dy="12.8">*#*******@@@#=*=:-::::=-:::::::-%@@@#%#*+*#+*#* </tspan>
-<tspan x="20" dy="12.8">******##+#@@=-----:::::::--===-:=@@##%#*##** ## </tspan>
-<tspan x="20" dy="12.8">**#*#*##**@@=*%####+::-:=######=-@@#%%*%%*#  ## </tspan>
-<tspan x="20" dy="12.8">*######***%@=*=-=====-::---=-----%++%%%#*##*### </tspan>
-<tspan x="20" dy="12.8">*##*#*#*++=#+=+.@@-:--::-:=@#:-:-=--*%#****#### </tspan>
-<tspan x="20" dy="12.8">*###**#**=+++=-.=*:::-::-::+=:::-=+:*%#**#*#*## </tspan>
-<tspan x="20" dy="12.8">*****##**+=++=--::-:--:-:-:::-::-=-=%%**#****## </tspan>
-<tspan x="20" dy="12.8">#*##*#***#*=+=-:-:::-=---:::::::-:+##%*##+*#*## </tspan>
-<tspan x="20" dy="12.8">#####*#**##*#+-:-=-::::::::=-::-#####%######### </tspan>
-<tspan x="20" dy="12.8">#######**#%#%#=-:-+=--::--==-::*%####%####%# ## </tspan>
-<tspan x="20" dy="12.8">######*#*##*#%#+-::--===--:::-#%%###%%%%##**# # </tspan>
-<tspan x="20" dy="12.8">#######*##**##%#+=-::---:::-==###*#%%%###**#    </tspan>
-<tspan x="20" dy="12.8">########*#%#####=++=-----===--####%#%%######*   </tspan>
-<tspan x="20" dy="12.8">########*#%#%%%*====+==++=-::-=*##%%%#**#**#  * </tspan>
-<tspan x="20" dy="12.8">##########%%%#==========-:::-:::*** %%#%###*#**#</tspan>
-<tspan x="20" dy="12.8">%%#%%%%%%#%%%%*======--::::::::+#**       %%##  </tspan>
-<tspan x="20" dy="12.8">%%%###########%#+==-:::::::--+****%             </tspan>
-<tspan x="20" dy="12.8">%####%##%%##%###**++=====++*****#               </tspan>
-<tspan x="20" dy="12.8">%%#%%          ***###****##***#                 </tspan>
-<tspan x="20" dy="12.8">##                 ##****##                     </tspan>
-<tspan x="20" dy="12.8">%##                                      %#  %  </tspan>
+    <!-- ASCII Art container (starting at x=15, y=22) -->
+    <text x="15" y="22" font-size="10.5" fill="#24292f" xml:space="preserve" class="monospace" style="line-height: 15.0px; letter-spacing: 0.5px;" opacity="0.9">
+<tspan x="15" dy="0">                                                    </tspan>
+<tspan x="15" dy="15.0">                    @%%%%%@%                        </tspan>
+<tspan x="15" dy="15.0">                 %%%%%%%%%%%%%%%%                   </tspan>
+<tspan x="15" dy="15.0">              %%%%%%%%%%%%%%%%%%%%%                 </tspan>
+<tspan x="15" dy="15.0">             %%%%@%%%%%%%%%%%@@%%%%%                </tspan>
+<tspan x="15" dy="15.0">            @@@@@@@@@@@@@@@@@%%@@@%%%               </tspan>
+<tspan x="15" dy="15.0">            @@@@#@##%+*+#%*=+:-*+@@@%               </tspan>
+<tspan x="15" dy="15.0">            @@@+--....::::...:...=@@@               </tspan>
+<tspan x="15" dy="15.0">             @@-=++++=::::-+****-:%@                </tspan>
+<tspan x="15" dy="15.0">             @@=*++=++-:::-====++:#%                </tspan>
+<tspan x="15" dy="15.0">            +-#=--:@*:--:::.+@-:::+--:              </tspan>
+<tspan x="15" dy="15.0">            ==+==-.#+.::::::-#:.::-+:-              </tspan>
+<tspan x="15" dy="15.0">            +-+==::::::-::::::::::=-:               </tspan>
+<tspan x="15" dy="15.0">             ====::::::-::::::::::::                </tspan>
+<tspan x="15" dy="15.0">               +=-:--::::::::=:::=-                 </tspan>
+<tspan x="15" dy="15.0">                +=::-=-::::---::-                   </tspan>
+<tspan x="15" dy="15.0">                 *=-:::-=--::::=                    </tspan>
+<tspan x="15" dy="15.0">                  +==-::::::-=:=                    </tspan>
+<tspan x="15" dy="15.0">                  +-===----==-:=#**                 </tspan>
+<tspan x="15" dy="15.0">              % *=========--:::::=*****             </tspan>
+<tspan x="15" dy="15.0">              % *--====--::::::::+**+*******        </tspan>
+<tspan x="15" dy="15.0">                 *==--:::::::::=****************    </tspan>
+<tspan x="15" dy="15.0">           ***** #**+=-----=++*******************   </tspan>
+<tspan x="15" dy="15.0">     #************+*******************************  </tspan>
+<tspan x="15" dy="15.0">     *+******************************************** </tspan>
+<tspan x="15" dy="15.0">     ********************************************** </tspan>
+<tspan x="15" dy="15.0">     #************************************#********#</tspan>
+<tspan x="15" dy="15.0">      #***********************************##********</tspan>
     </text>
   </g>
 
   <!-- RIGHT COLUMN: Interactive Terminal Panel -->
   <g>
     <!-- Zsh Prompt 1: Tech Stack cat command -->
-    <text x="350" y="35" font-size="13.5" fill="#008033" font-weight="bold" class="monospace">
+    <text x="395" y="25" font-size="13.0" fill="#008033" font-weight="bold" class="monospace">
       roshan@roshan_os ~ % <tspan fill="#24292f">cat skills.yaml</tspan>
     </text>
     
     <!-- Tech Stack Output -->
-    <text x="350" y="58" font-size="12.0" fill="#24292f" xml:space="preserve" class="monospace" style="line-height: 18px;">
-      <tspan x="350" dy="0" fill="#57606a">mobile:</tspan>   <tspan fill="#24292f">[Flutter, Dart, Android]</tspan>
-      <tspan x="350" dy="18" fill="#57606a">frontend:</tspan> <tspan fill="#24292f">[React, HTML5, CSS3, JavaScript, TypeScript]</tspan>
-      <tspan x="350" dy="18" fill="#57606a">backend:</tspan>  <tspan fill="#24292f">[Node.js, Express, REST_API]</tspan>
-      <tspan x="350" dy="18" fill="#57606a">ai_ml:</tspan>    <tspan fill="#24292f">[OpenAI, Gemini, Python, RAG, Prompt_Eng.]</tspan>
-      <tspan x="350" dy="18" fill="#57606a">databases:</tspan><tspan fill="#24292f">[MySQL, PostgreSQL, MongoDB, Firestore]</tspan>
-      <tspan x="350" dy="18" fill="#57606a">tools:</tspan>    <tspan fill="#24292f">[Git, GitHub, Docker, Linux, Postman, Figma, VSCode]</tspan>
+    <text x="395" y="48" font-size="11.0" fill="#24292f" xml:space="preserve" class="monospace" style="line-height: 20px;">
+      <tspan x="395" dy="0" fill="#57606a">mobile:</tspan>   <tspan fill="#24292f">[Flutter, Dart, Android]</tspan>
+      <tspan x="395" dy="20" fill="#57606a">frontend:</tspan> <tspan fill="#24292f">[React, HTML5, CSS3, JavaScript, TypeScript]</tspan>
+      <tspan x="395" dy="20" fill="#57606a">backend:</tspan>  <tspan fill="#24292f">[Node.js, Express, REST_API]</tspan>
+      <tspan x="395" dy="20" fill="#57606a">ai_ml:</tspan>    <tspan fill="#24292f">[OpenAI, Gemini, Python, RAG, Prompt_Eng.]</tspan>
+      <tspan x="395" dy="20" fill="#57606a">databases:</tspan><tspan fill="#24292f">[MySQL, PostgreSQL, MongoDB, Firestore]</tspan>
+      <tspan x="395" dy="20" fill="#57606a">tools:</tspan>    <tspan fill="#24292f">[Git, GitHub, Docker, Linux, Postman, Figma, VSCode]</tspan>
     </text>
 
     <!-- Zsh Prompt 2: Contact curl command -->
-    <text x="350" y="195" font-size="13.5" fill="#008033" font-weight="bold" class="monospace">
+    <text x="395" y="205" font-size="13.0" fill="#008033" font-weight="bold" class="monospace">
       roshan@roshan_os ~ % <tspan fill="#24292f">curl -s roshan.os/contact</tspan>
     </text>
     
     <!-- Contact Info Output -->
-    <text x="350" y="218" font-size="12.0" fill="#24292f" xml:space="preserve" class="monospace" style="line-height: 18px;">
-      <tspan x="350" dy="0" fill="#57606a">email</tspan>    <tspan fill="#008033">-&gt;</tspan> <tspan fill="#24292f">yogiroshan2005@gmail.com</tspan>
-      <tspan x="350" dy="18" fill="#57606a">linkedin</tspan> <tspan fill="#008033">-&gt;</tspan> <tspan fill="#24292f">roshanlalyogi</tspan>
-      <tspan x="350" dy="18" fill="#57606a">github</tspan>   <tspan fill="#008033">-&gt;</tspan> <tspan fill="#24292f">github.com/rly09</tspan>
+    <text x="395" y="228" font-size="11.0" fill="#24292f" xml:space="preserve" class="monospace" style="line-height: 20px;">
+      <tspan x="395" dy="0" fill="#57606a">email</tspan>    <tspan fill="#008033">-&gt;</tspan> <tspan fill="#24292f">yogiroshan2005@gmail.com</tspan>
+      <tspan x="395" dy="20" fill="#57606a">linkedin</tspan> <tspan fill="#008033">-&gt;</tspan> <tspan fill="#24292f">roshanlalyogi</tspan>
+      <tspan x="395" dy="20" fill="#57606a">github</tspan>   <tspan fill="#008033">-&gt;</tspan> <tspan fill="#24292f">github.com/rly09</tspan>
     </text>
 
     <!-- Zsh Prompt 3: git stats status command -->
-    <text x="350" y="300" font-size="13.5" fill="#008033" font-weight="bold" class="monospace">
+    <text x="395" y="325" font-size="13.0" fill="#008033" font-weight="bold" class="monospace">
       roshan@roshan_os ~ % <tspan fill="#24292f">git status --stats</tspan>
     </text>
     
     <!-- Git Stats Output -->
-    <text x="350" y="323" font-size="12.0" fill="#24292f" xml:space="preserve" class="monospace" style="line-height: 18px;">
-      <tspan x="350" dy="0" fill="#57606a">repos:</tspan> <tspan fill="#24292f" font-weight="bold">67</tspan> <tspan fill="#57606a"> | stars:</tspan> <tspan fill="#24292f" font-weight="bold">0</tspan> <tspan fill="#57606a"> | followers:</tspan> <tspan fill="#24292f" font-weight="bold">7</tspan>
-      <tspan x="350" dy="18" fill="#57606a">commits:</tspan> <tspan fill="#24292f" font-weight="bold">3944</tspan> <tspan fill="#57606a"> | contributions:</tspan> <tspan fill="#24292f" font-weight="bold">2465</tspan>
-      <tspan x="350" dy="18" fill="#57606a">lines_of_code:</tspan> <tspan fill="#24292f" font-weight="bold">27.19M LOC</tspan><tspan class="cursor" fill="#008033">_</tspan>
+    <text x="395" y="348" font-size="11.0" fill="#24292f" xml:space="preserve" class="monospace" style="line-height: 20px;">
+      <tspan x="395" dy="0" fill="#57606a">repos:</tspan> <tspan fill="#24292f" font-weight="bold">67</tspan> <tspan fill="#57606a"> | stars:</tspan> <tspan fill="#24292f" font-weight="bold">0</tspan> <tspan fill="#57606a"> | followers:</tspan> <tspan fill="#24292f" font-weight="bold">7</tspan>
+      <tspan x="395" dy="20" fill="#57606a">commits:</tspan> <tspan fill="#24292f" font-weight="bold">3944</tspan> <tspan fill="#57606a"> | contributions:</tspan> <tspan fill="#24292f" font-weight="bold">2465</tspan>
+      <tspan x="395" dy="20" fill="#57606a">lines_of_code:</tspan> <tspan fill="#24292f" font-weight="bold">27.19M LOC</tspan><tspan class="cursor" fill="#008033">_</tspan>
     </text>
   </g>
 </svg>
