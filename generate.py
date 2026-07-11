@@ -17,7 +17,7 @@ DARK_SVG_PATH = "dark_mode.svg"
 LIGHT_SVG_PATH = "light_mode.svg"
 CACHE_EXPIRY_HOURS = 12
 
-# Grid settings for Left Column ASCII art (increased size)
+# Grid settings for Left Column ASCII art
 ASCII_WIDTH = 50
 ASCII_HEIGHT = 30
 ASCII_ASPECT_RATIO = 0.55  # height-to-width ratio of monospace character
@@ -28,8 +28,8 @@ LIGHT_RAMP = ['@', '%', '#', '*', '+', '=', '-', ':', '.', ' ']
 
 # Theme Palettes
 THEME_DARK = {
-    "bg_sub_frame": "#0f141c",      # Dark slate/charcoal (not completely black)
-    "border_separator": "#1d2433",  # Inner separation lines
+    "bg_sub_frame": "#0f141c",      # Dark slate/charcoal
+    "border_separator": "#1d2433",  # Grid dots & prompt lines
     "text_main": "#e6edf3",         # Main text (bright)
     "text_subtle": "#8b949e",       # Subtle text (grey)
     "accent_color": "#62ef8a",      # Light mint green
@@ -39,7 +39,7 @@ THEME_DARK = {
 
 THEME_LIGHT = {
     "bg_sub_frame": "#ffffff",     # White background
-    "border_separator": "#e1e4e8", # Inner separation lines
+    "border_separator": "#e1e4e8", # Grid dots & prompt lines
     "text_main": "#24292f",        # Main text (dark charcoal)
     "text_subtle": "#57606a",      # Subtle text (dark grey)
     "accent_color": "#008033",     # Tech green (readable)
@@ -140,7 +140,7 @@ def format_ascii_tspans(grid, ramp, start_x=20):
         line_text = "".join(chars)
         escaped_line = escape_xml(line_text)
         
-        # Apply line height using dy (larger vertical spacing for larger font)
+        # Apply line height using dy
         dy = "11.5" if i > 0 else "0"
         tspans.append(f'<tspan x="{start_x}" dy="{dy}">{escaped_line}</tspan>')
         
@@ -367,10 +367,13 @@ def gather_stats():
     except Exception as e:
         print(f"Failed to cache stats: {e}")
         
+        # Ultimate fallback
+        stats = get_mock_stats()
+        
     return stats
 
 # ==============================================================================
-# SVG COMPILATION TEMPLATE (Width 830px to add column gap)
+# SVG COMPILATION TEMPLATE
 # ==============================================================================
 SVG_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 360" width="830" height="360">
   <defs>
@@ -394,50 +397,66 @@ SVG_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 360" 
         filter: drop-shadow(0 0 3px {accent_color_glow});
       }}
     </style>
+    
+    <!-- Dotted Grid Pattern -->
+    <pattern id="dot-grid" width="15" height="15" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="0.8" fill="{border_separator}" opacity="0.4" />
+    </pattern>
   </defs>
 
-  <!-- Background Fill -->
+  <!-- Background Base Fill -->
   <rect x="0" y="0" width="830" height="360" fill="{bg_sub_frame}" rx="8" />
+  
+  <!-- Dot Grid Pattern Overlay -->
+  <rect x="0" y="0" width="830" height="360" fill="url(#dot-grid)" rx="8" />
 
-  <!-- LEFT COLUMN: Grayscale ASCII Portrait (x=20 to x=285) -->
+  <!-- LEFT COLUMN: Grayscale ASCII Portrait -->
   <g>
-    <!-- ASCII Art container (starting at x=20, y=30 to fit snuggly) -->
+    <!-- ASCII Art container (starting at x=20, y=30) -->
     <text x="20" y="30" font-size="8.8" fill="{ascii_color}" xml:space="preserve" class="monospace" style="line-height: 11.5px; letter-spacing: 0.5px;" opacity="0.9">
 {ascii_art_tspans}
     </text>
   </g>
 
-  <!-- RIGHT COLUMN: Terminal Stats Panel (x=330 to x=810) -->
+  <!-- RIGHT COLUMN: Interactive Terminal Panel -->
   <g>
-    <!-- Header Prompt -->
-    <text x="330" y="30" font-size="12" fill="{accent_color}" font-weight="bold" class="monospace">
-      roshan@roshan_os ~ [git:main] <tspan fill="{text_subtle}">────────────────────────</tspan>
+    <!-- Zsh Prompt 1: Tech Stack cat command -->
+    <text x="330" y="30" font-size="11.5" fill="{accent_color}" font-weight="bold" class="monospace">
+      roshan@roshan_os ~ % <tspan fill="{text_main}">cat skills.yaml</tspan>
     </text>
     
-    <!-- Tech Stack & Git Stats Section -->
-    <text x="330" y="60" font-size="11" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 16px;">
-      <tspan x="330" dy="0" fill="{accent_color}" font-weight="bold">TECH_STACK ─────────────────────────────────────────────</tspan>
-      
-      <tspan x="330" dy="20" fill="{accent_color}">Mobile     ::</tspan> <tspan fill="{text_main}">Flutter, Dart, Android, Firebase, Supabase</tspan>
-      <tspan x="330" dy="16" fill="{accent_color}">Frontend   ::</tspan> <tspan fill="{text_main}">HTML5, CSS3, JavaScript, TypeScript, React</tspan>
-      <tspan x="330" dy="16" fill="{accent_color}">Backend    ::</tspan> <tspan fill="{text_main}">Node.js, Express, REST API</tspan>
-      <tspan x="330" dy="16" fill="{accent_color}">AI &amp; ML    ::</tspan> <tspan fill="{text_main}">OpenAI, Gemini, Python, RAG, Prompt Eng.</tspan>
-      <tspan x="330" dy="16" fill="{accent_color}">Databases  ::</tspan> <tspan fill="{text_main}">MySQL, PostgreSQL, MongoDB, Firestore</tspan>
-      <tspan x="330" dy="16" fill="{accent_color}">Tools      ::</tspan> <tspan fill="{text_main}">Git, GitHub, Docker, Linux, Postman, Figma, VSCode</tspan>
-      
-      <!-- Contact Info Section -->
-      <tspan x="330" dy="30" fill="{accent_color}" font-weight="bold">CONTACT_INFO ───────────────────────────────────────────</tspan>
-      
-      <tspan x="330" dy="20" fill="{accent_color}">Email      ::</tspan> <tspan fill="{text_main}">yogiroshan2005@gmail.com</tspan>
-      <tspan x="330" dy="16" fill="{accent_color}">LinkedIn   ::</tspan> <tspan fill="{text_main}">roshanlalyogi</tspan>
-      <tspan x="330" dy="16" fill="{accent_color}">GitHub     ::</tspan> <tspan fill="{text_main}">github.com/rly09</tspan>
-      
-      <!-- Git Stats Section -->
-      <tspan x="330" dy="30" fill="{accent_color}" font-weight="bold">GIT_STATS ──────────────────────────────────────────────</tspan>
-      
-      <tspan x="330" dy="20" fill="{text_subtle}">Repos      ::</tspan> <tspan fill="{text_main}" font-weight="bold">{repos}</tspan> <tspan fill="{text_subtle}">  |  Stars    ::</tspan> <tspan fill="{text_main}" font-weight="bold">{stars}</tspan>
-      <tspan x="330" dy="16" fill="{text_subtle}">Commits    ::</tspan> <tspan fill="{text_main}" font-weight="bold">{commits}</tspan> <tspan fill="{text_subtle}">  |  Followers::</tspan> <tspan fill="{text_main}" font-weight="bold">{followers}</tspan>
-      <tspan x="330" dy="16" fill="{text_subtle}">Contribs   ::</tspan> <tspan fill="{text_main}" font-weight="bold">{contributions}</tspan> <tspan fill="{text_subtle}">  |  Code     ::</tspan> <tspan fill="{text_main}" font-weight="bold">{loc} LOC</tspan><tspan class="cursor" fill="{accent_color}">_</tspan>
+    <!-- Tech Stack Output -->
+    <text x="330" y="50" font-size="10.8" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 15px;">
+      <tspan x="330" dy="0" fill="{text_subtle}">mobile:</tspan>   <tspan fill="{text_main}">[Flutter, Dart, Android]</tspan>
+      <tspan x="330" dy="15" fill="{text_subtle}">frontend:</tspan> <tspan fill="{text_main}">[React, HTML5, CSS3, JavaScript, TypeScript]</tspan>
+      <tspan x="330" dy="15" fill="{text_subtle}">backend:</tspan>  <tspan fill="{text_main}">[Node.js, Express, REST_API]</tspan>
+      <tspan x="330" dy="15" fill="{text_subtle}">ai_ml:</tspan>    <tspan fill="{text_main}">[OpenAI, Gemini, Python, RAG, Prompt_Eng.]</tspan>
+      <tspan x="330" dy="15" fill="{text_subtle}">databases:</tspan><tspan fill="{text_main}">[MySQL, PostgreSQL, MongoDB, Firestore]</tspan>
+      <tspan x="330" dy="15" fill="{text_subtle}">tools:</tspan>    <tspan fill="{text_main}">[Git, GitHub, Docker, Linux, Postman, Figma, VSCode]</tspan>
+    </text>
+
+    <!-- Zsh Prompt 2: Contact curl command -->
+    <text x="330" y="168" font-size="11.5" fill="{accent_color}" font-weight="bold" class="monospace">
+      roshan@roshan_os ~ % <tspan fill="{text_main}">curl -s roshan.os/contact</tspan>
+    </text>
+    
+    <!-- Contact Info Output -->
+    <text x="330" y="188" font-size="10.8" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 15px;">
+      <tspan x="330" dy="0" fill="{text_subtle}">email</tspan>    <tspan fill="{accent_color}">-&gt;</tspan> <tspan fill="{text_main}">yogiroshan2005@gmail.com</tspan>
+      <tspan x="330" dy="15" fill="{text_subtle}">linkedin</tspan> <tspan fill="{accent_color}">-&gt;</tspan> <tspan fill="{text_main}">roshanlalyogi</tspan>
+      <tspan x="330" dy="15" fill="{text_subtle}">github</tspan>   <tspan fill="{accent_color}">-&gt;</tspan> <tspan fill="{text_main}">github.com/rly09</tspan>
+    </text>
+
+    <!-- Zsh Prompt 3: git stats status command -->
+    <text x="330" y="258" font-size="11.5" fill="{accent_color}" font-weight="bold" class="monospace">
+      roshan@roshan_os ~ % <tspan fill="{text_main}">git status --stats</tspan>
+    </text>
+    
+    <!-- Git Stats Output -->
+    <text x="330" y="278" font-size="10.8" fill="{text_main}" xml:space="preserve" class="monospace" style="line-height: 15px;">
+      <tspan x="330" dy="0" fill="{text_subtle}">repos:</tspan> <tspan fill="{text_main}" font-weight="bold">{repos}</tspan> <tspan fill="{text_subtle}"> | stars:</tspan> <tspan fill="{text_main}" font-weight="bold">{stars}</tspan> <tspan fill="{text_subtle}"> | followers:</tspan> <tspan fill="{text_main}" font-weight="bold">{followers}</tspan>
+      <tspan x="330" dy="15" fill="{text_subtle}">commits:</tspan> <tspan fill="{text_main}" font-weight="bold">{commits}</tspan> <tspan fill="{text_subtle}"> | contributions:</tspan> <tspan fill="{text_main}" font-weight="bold">{contributions}</tspan>
+      <tspan x="330" dy="15" fill="{text_subtle}">lines_of_code:</tspan> <tspan fill="{text_main}" font-weight="bold">{loc} LOC</tspan><tspan class="cursor" fill="{accent_color}">_</tspan>
     </text>
   </g>
 </svg>
@@ -447,7 +466,7 @@ SVG_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 360" 
 # MAIN COMPILER
 # ==============================================================================
 def main():
-    print("Starting ROSHAN.OS SVG Redesign Pipeline (Holographic Theme - Spacious Aligned)...")
+    print("Starting ROSHAN.OS SVG Redesign Pipeline (Holographic Theme - Dynamic Viewfinder)...")
     
     # 1. Resolve profile avatar
     avatar_exists = download_avatar(USERNAME, AVATAR_PATH)
@@ -470,6 +489,8 @@ def main():
     if avatar_exists:
         ascii_grid = generate_ascii_grid(AVATAR_PATH)
         
+
+
     # 4. Compile Dark Mode SVG
     print("Compiling dark_mode.svg...")
     dark_ascii_tspans = format_ascii_tspans(ascii_grid, DARK_RAMP)
