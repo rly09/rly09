@@ -104,9 +104,9 @@
     
     <!-- Git Stats Output -->
     <text x="395" y="348" font-size="11.0" fill="#24292f" xml:space="preserve" class="monospace" style="line-height: 20px;">
-      <tspan x="395" dy="0" fill="#57606a">repos:</tspan> <tspan fill="#24292f" font-weight="bold">66</tspan> <tspan fill="#57606a"> | stars:</tspan> <tspan fill="#24292f" font-weight="bold">0</tspan> <tspan fill="#57606a"> | followers:</tspan> <tspan fill="#24292f" font-weight="bold">7</tspan>
-      <tspan x="395" dy="20" fill="#57606a">commits:</tspan> <tspan fill="#24292f" font-weight="bold">3888</tspan> <tspan fill="#57606a"> | contributions:</tspan> <tspan fill="#24292f" font-weight="bold">2430</tspan>
-      <tspan x="395" dy="20" fill="#57606a">lines_of_code:</tspan> <tspan fill="#24292f" font-weight="bold">27.21M LOC</tspan><tspan class="cursor" fill="#008033">_</tspan>
+      <tspan x="395" dy="0" fill="#57606a">repos:</tspan> <tspan fill="#24292f" font-weight="bold">48</tspan> <tspan fill="#57606a"> | stars:</tspan> <tspan fill="#24292f" font-weight="bold">1</tspan> <tspan fill="#57606a"> | followers:</tspan> <tspan fill="#24292f" font-weight="bold">7</tspan>
+      <tspan x="395" dy="20" fill="#57606a">commits:</tspan> <tspan fill="#24292f" font-weight="bold">283</tspan> <tspan fill="#57606a"> | contributions:</tspan> <tspan fill="#24292f" font-weight="bold">414</tspan>
+      <tspan x="395" dy="20" fill="#57606a">lines_of_code:</tspan> <tspan fill="#24292f" font-weight="bold">1.80M LOC</tspan><tspan class="cursor" fill="#008033">_</tspan>
     </text>
   </g>
 </svg>
